@@ -1,7 +1,8 @@
+import Error from "next/error";
 import { connectToDatabase } from "../utils/mongodb";
 
-function Profile({ users }) {
-	console.log(users);
+function Profile({ user }) {
+	if (user == null) return <Error statusCode={404} title="User Not Found" />;
 	return <div>hello</div>;
 }
 
@@ -14,7 +15,7 @@ export const getServerSideProps = async ({ params }) => {
 
 	return {
 		props: {
-			users: JSON.parse(JSON.stringify(user)),
+			user: JSON.parse(JSON.stringify(user)),
 		},
 	};
 };
