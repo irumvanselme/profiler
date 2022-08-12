@@ -18,6 +18,49 @@ export default function UpdateProfile() {
 	}, []);
 
 	const updateProfile = async (data) => {
+		console.log(data);
+
+		// cloudinary.uploader.upload("upload", {
+
+		// })
+
+		// upload profile PIC
+		let formData = new FormData();
+		formData.append("file", data.profile_photo);
+		formData.append("upload_preset", "emk5bdxz");
+
+		let uploadedProfilePic = await axios.post(
+			"https://api.cloudinary.com/v1_1/dgjjz9499/upload",
+			formData,
+			{
+				headers: {
+					"Content-Type": "multipart/form-data",
+				},
+			}
+		);
+
+		data.profile_pic = uploadedProfilePic.data.secure_url;
+
+		formData = new FormData();
+		formData.append("file", data.cover_photo);
+		formData.append("upload_preset", "emk5bdxz");
+
+		let uploadedCoverPic = await axios.post(
+			"https://api.cloudinary.com/v1_1/dgjjz9499/upload",
+			formData,
+			{
+				headers: {
+					"Content-Type": "multipart/form-data",
+				},
+			}
+		);
+
+		data.cover_pic = uploadedCoverPic.data.secure_url;
+
+		console.log(uploadedProfilePic);
+
+		delete data.profile_photo;
+		delete data.cover_photo;
 		let updated = await axios.put("/api/v1/users/" + user._id, data);
 
 		console.log(updated);
@@ -65,6 +108,23 @@ export default function UpdateProfile() {
 						className="block border"
 						name="address"
 						defaultValue={user.address}
+					/>
+				</section>
+				<section>
+					<h1>CONTACT INFORMATION</h1>
+					<input
+						type="file"
+						placeholder="Cover Photo"
+						className="block border"
+						name="cover_photo"
+						id="cover_photo"
+					/>
+					<input
+						type="file"
+						placeholder="Profile Photo"
+						className="block border"
+						name="profile_photo"
+						id="profile_photo"
 					/>
 				</section>
 				<section>
