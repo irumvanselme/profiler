@@ -1,9 +1,14 @@
 import Error from "next/error";
+import { PageLayout } from "../components/layouts/page";
 import { connectToDatabase } from "../utils/mongodb";
 
 function Profile({ user }) {
 	if (user == null) return <Error statusCode={404} title="User Not Found" />;
-	return <div>hello</div>;
+	return (
+		<PageLayout>
+			<div>hello</div>
+		</PageLayout>
+	);
 }
 
 export const getServerSideProps = async ({ params }) => {
