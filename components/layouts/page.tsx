@@ -14,7 +14,7 @@ export function PageLayout({ children }) {
 			</Head>
 			<main className="min-h-[95vh]">
 				<Navbar />
-				<div className="container mx-auto mt-5">
+				<div className="container mx-auto mt-5 px-2">
 					<div>{children}</div>
 				</div>
 			</main>
