@@ -313,6 +313,7 @@ export default function UpdateProfile() {
 												type="text"
 												placeholder="Input title"
 												className="px-2 py-1"
+												value={serviceDto.name}
 												onChange={(event) => {
 													setServiceDto({
 														...serviceDto,
@@ -324,6 +325,7 @@ export default function UpdateProfile() {
 											<textarea
 												placeholder="Service Description"
 												className="p-2 mt-2"
+												value={serviceDto.description}
 												onChange={(event) => {
 													setServiceDto({
 														...serviceDto,
