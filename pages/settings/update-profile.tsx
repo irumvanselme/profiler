@@ -198,8 +198,8 @@ export default function UpdateProfile() {
 								label="Proffession"
 								type="text"
 								placeholder="eg: Teacher, Developer, etc"
-								name="profession"
-								defaultValue={user.profession}
+								name="proffession"
+								defaultValue={user.proffession}
 							/>
 						</section>
 						<section className="py-10 border-b-4 border-gray-600">
@@ -248,7 +248,7 @@ export default function UpdateProfile() {
 									onChange={handlePictureChange("cover")}
 								/>
 								{coverPic != null && (
-									<div className="mt-3 h-[80px] w-[100%] bg-gray-200">
+									<div className="mt-3 h-[80px] w-[100%] bg-gray-200 overflow-hidden">
 										<img
 											src={coverPic}
 											alt="The Cover PIC"
