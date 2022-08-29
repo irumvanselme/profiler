@@ -30,6 +30,7 @@ export default function UpdateProfile() {
 		description: "",
 	});
 
+
 	useEffect(() => {
 		(async function () {
 			let user_id = localStorage.getItem("session_id");
@@ -37,6 +38,7 @@ export default function UpdateProfile() {
 
 			let user = await axios.get("/api/v1/users/" + user_id);
 			setUser(user.data);
+			setServices(user.data.services)
 		})();
 	}, []);
 
@@ -97,11 +99,13 @@ export default function UpdateProfile() {
 		if (type == "cover") {
 			if (coverPictureRef.current) {
 				setCoverPic(
+					// @ts-ignore
 					URL.createObjectURL(coverPictureRef.current.files[0])
 				);
 			}
 		} else if (type == "profile") {
 			setProfilePic(
+				// @ts-ignore
 				URL.createObjectURL(profilePictureRef?.current?.files[0])
 			);
 		}
@@ -268,36 +272,36 @@ export default function UpdateProfile() {
 									label="Twitter Link"
 									type="text"
 									placeholder="Twitter Link"
-									name="twitter_link"
-									defaultValue={user.twitter_link}
+									name="twitter_username"
+									defaultValue={user.twitter_username}
 								/>
 								<Input
 									label="Github Link"
 									type="text"
 									placeholder="Github Link"
-									name="github_link"
-									defaultValue={user.github_link}
+									name="github_username"
+									defaultValue={user.github_username}
 								/>
 								<Input
 									label="LinkedIn Link"
 									type="text"
 									placeholder="LinkedIn Link"
-									name="linkedin_link"
-									defaultValue={user.linkedin_link}
+									name="linkedin_username"
+									defaultValue={user.linkedin_username}
 								/>
 								<Input
 									label="Instagra Link"
 									type="text"
 									placeholder="Instagram Link"
-									name="instagram_link"
-									defaultValue={user.instagram_link}
+									name="instagram_username"
+									defaultValue={user.instagram_username}
 								/>
 								<Input
 									label="Facebook Link"
 									type="text"
 									placeholder="Facebook Link"
-									name="facebook_link"
-									defaultValue={user.facebook_link}
+									name="facebook_username"
+									defaultValue={user.facebook_username}
 								/>
 							</div>
 						</section>

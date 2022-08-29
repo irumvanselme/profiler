@@ -15,7 +15,7 @@ export function Text({
 }: Props) {
 	let className = ``;
 
-	if (capitalize) className += ` uppercase font-medium`;
+	if (capitalize) className += ` uppercase font-medium tacking-wide text-lg`;
 
 	if (variant === 1) className += ` text-3xl font-bold`;
 	else if (variant === 2) className += ` text-xl font-bold`;
@@ -24,5 +24,5 @@ export function Text({
 	if (color == "black") className += ` text-black`;
 	else if (color == "gray") className += ` text-gray-600`;
 
-	return <div className={className}>{children}</div>;
+	return <span className={className}>{children}</span>;
 }
