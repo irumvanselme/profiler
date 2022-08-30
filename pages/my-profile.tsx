@@ -3,7 +3,7 @@ import { useRouter } from "next/router";
 import { useEffect, useState } from "react";
 import Profile from "./[username]";
 
-export default function MyProfile () {
+export default function MyProfile() {
     const [user, setUser] = useState(null);
 
     const router = useRouter();
@@ -19,5 +19,5 @@ export default function MyProfile () {
     }, [router]);
 
     if (user == null) return <div>Loading...</div>;
-    return <Profile user={user}/>;
+    return <Profile user={user} />;
 }
