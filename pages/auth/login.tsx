@@ -57,7 +57,7 @@ export default function Login() {
 				</form>
 				<div className="mt-5 text-[dodgerblue] hover:underline">
 					<Link href={"/auth/register"}>
-						Don't have an account ? Register
+						Don &apos; t have an account ? Register
 					</Link>
 				</div>
 			</div>

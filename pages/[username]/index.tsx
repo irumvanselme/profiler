@@ -21,9 +21,9 @@ function Profile({ user }) {
                             backgroundImage: "url('" + user.cover_pic + "')",
                         }}
                     />
-                    <div className={"-mt-[150px] flex justify-center lg:justify-start"}>
+                    <div className={"-mt-[100px] md:-mt-[150px] flex justify-center lg:justify-start"}>
                         <div
-                            className="w-[250px] h-[250px] bg-gray-300 rounded-[125px] border-[15px] border-white flex justify-center items-center bg-center bg-cover"
+                            className="w-[200px] md:w-[250px] h-[200px] md:h-[250px] bg-gray-300 rounded-[125px] border-[15px] border-white flex justify-center items-center bg-center bg-cover"
                             style={{
                                 backgroundImage: "url('" + user.profile_pic + "')",
                             }}
@@ -131,7 +131,8 @@ function Profile({ user }) {
                         </div>
                         <section className="__section">
                             <Text capitalize>Social media links</Text>
-                            <div className="grid grid-cols-1 xs:grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 3xl:grid-cols-5 4xl:grid-cols-6 gap-8 mt-8">
+                            <div className=" flex flex-wrap gap-8 mt-8">
+                                {/* <div className="grid grid-cols-1 xs:grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 3xl:grid-cols-5  gap-8 mt-8"> */}
 
                                 <div className="bg-gray-200 rounded-lg text-center p-4 flex items-center">
                                     <div>
@@ -205,13 +206,13 @@ function Profile({ user }) {
                             </div>
                         </section>
                         <section className="__section">
-                            <div className="flex justify-between items-center">
+                            <div className="flex justify-between items-center pb-5">
                                 <Text capitalize>Services</Text>
                                 <div>
                                     <Button>CONTACT</Button>
                                 </div>
                             </div>
-                            <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3 2xl:grid-cols-4 4xl:grid-cols-5 mt-8">
+                            <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
                                 {user.services.map((service, i) => (
                                     <div key={i} className="bg-gray-200 rounded-lg p-4">
                                         <h1 className="pb-3">

@@ -14,7 +14,7 @@ export function Navbar() {
 	}, []);
 
 	return (
-		<div className="flex justify-between container mx-auto border-b py-3 items-center px-1">
+		<div className="flex justify-between mx-auto border-b py-3 items-center px-1">
 			<Link href="/">
 				<h1 className="cursor-pointer font-bold text-2xl">Profiler</h1>
 			</Link>
