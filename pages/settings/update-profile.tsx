@@ -124,7 +124,7 @@ export default function UpdateProfile() {
 			<div>
 				<h1 className="font-bold text-3xl pb-10">Update Profile</h1>
 				<form onSubmit={submithandler(updateProfile)}>
-					<div className="grid grid-cols-3 gap-x-20">
+					<div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-20">
 						<section className="py-10 border-b-4 border-gray-600">
 							<h1 className="uppercase pb-5 text-gray-600 tracking-wide">
 								CONTACT INFORMATION
@@ -263,11 +263,11 @@ export default function UpdateProfile() {
 								)}
 							</div>
 						</section>
-						<section className="col-span-3 py-10 border-b-4 border-gray-600">
+						<section className="md:col-span-2 lg:col-span-3 py-10 border-b-4 border-gray-600">
 							<h1 className="uppercase pb-5 text-gray-600 tracking-wide">
 								Social Media Links
 							</h1>
-							<div className="grid grid-cols-3 gap-x-20">
+							<div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-20">
 								<Input
 									label="Twitter Link"
 									type="text"
@@ -305,11 +305,11 @@ export default function UpdateProfile() {
 								/>
 							</div>
 						</section>
-						<section className="col-span-3 py-10">
+						<section className="md:col-span-2 lg:col-span-3 py-10">
 							<h1 className="uppercase pb-5 text-gray-600 tracking-wide">
 								Service
 							</h1>
-							<div className="grid grid-cols-3 gap-x-20">
+							<div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-20">
 								<div className="bg-gray-200 rounded-3xl px-5 py-4">
 									<h1>New Service</h1>
 									<div className="flex justify-between">
