@@ -14,34 +14,34 @@ export function Navbar() {
 	}, []);
 
 	return (
-		<div className="flex justify-between mx-auto border-b py-3 items-center px-1">
+		<div className="flex justify-between mx-auto border-b py-3 items-center px-1 md:px-5 xl:px-[90px]">
 			<Link href="/">
-				<h1 className="cursor-pointer font-bold text-2xl">Profiler</h1>
+				<h1 className="cursor-pointer font-bold text-2xl">PROFILER</h1>
 			</Link>
-			<div className="flex gap-2">
+			<div className="flex gap-5">
 				{isLoggedIn ? (
 					<>
 						<Link href="/settings/update-profile">
-							<div>
-								<Button outline>Settings</Button>
+							<div className="text-[dodgerblue] cursor-pointer hover:underline transition">
+								Settings
 							</div>
 						</Link>
 						<Link href="/auth/logout">
-							<div>
-								<Button outline>Log Out</Button>
+							<div className="text-[dodgerblue] cursor-pointer hover:underline transition">
+								Log Out
 							</div>
 						</Link>
 					</>
 				) : (
 					<>
 						<Link href="/auth/login">
-							<div>
-								<Button outline>Login</Button>
+							<div className="text-[dodgerblue] cursor-pointer hover:underline transition">
+								Login
 							</div>
 						</Link>
 						<Link href="/auth/register">
-							<div>
-								<Button>Create Yours</Button>
+							<div className="text-[dodgerblue] cursor-pointer hover:underline transition">
+								Create Your Profile
 							</div>
 						</Link>
 					</>
